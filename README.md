@@ -463,7 +463,7 @@ Overall, the Homepage project provided a comprehensive exercise in web developme
 
 #### Associated Files
 * [images](https://github.com/alex-gillard/CS50_Projects/tree/main/images)
-* [index.html](https://github.com/alex-gillard/CS50_Projects/blob/main/index.html)
+* [hp_index.html](https://github.com/alex-gillard/CS50_Projects/blob/main/hp_index.html)
 * [moe.html](https://github.com/alex-gillard/CS50_Projects/blob/main/moe.html)
 * [ref.html](https://github.com/alex-gillard/CS50_Projects/blob/main/ref.html)
 * [rep.html](https://github.com/alex-gillard/CS50_Projects/blob/main/rep.html)
@@ -482,9 +482,9 @@ Participants had the option to extend the functionality of the web application b
 
 #### Associated Files
 
-* [index.html](https://github.com/alex-gillard/CS50_Projects/blob/main/index.html)
+* [bd_index.html](https://github.com/alex-gillard/CS50_Projects/blob/main/bd_index.html)
 * [bd_styles.css](https://github.com/alex-gillard/CS50_Projects/blob/main/bd_styles.css)
-* [app.py](https://github.com/alex-gillard/CS50_Projects/blob/main/app.py)
+* [bd_app.py](https://github.com/alex-gillard/CS50_Projects/blob/main/bd_app.py)
 * [birthdays.db](https://github.com/alex-gillard/CS50_Projects/blob/main/birthdays.db)
 
 ### Finance
@@ -517,14 +517,14 @@ This project provided a comprehensive experience in building a full-fledged web 
  * [apology.html](https://github.com/alex-gillard/CS50_Projects/blob/main/apology.html)
  * [buy.html](https://github.com/alex-gillard/CS50_Projects/blob/main/buy.html)
  * [history.html](https://github.com/alex-gillard/CS50_Projects/blob/main/history.html)
- * [index.html](https://github.com/alex-gillard/CS50_Projects/blob/main/index.html)
+ * [fin_index.html](https://github.com/alex-gillard/CS50_Projects/blob/main/fin_index.html)
  * [layout.html](https://github.com/alex-gillard/CS50_Projects/blob/main/layout.html)
  * [login.html](https://github.com/alex-gillard/CS50_Projects/blob/main/login.html)
  * [quote.html](https://github.com/alex-gillard/CS50_Projects/blob/main/quote.html)
  * [quoted.html](https://github.com/alex-gillard/CS50_Projects/blob/main/quoted.html)
  * [register.html](https://github.com/alex-gillard/CS50_Projects/blob/main/register.html)
  * [sell.html](https://github.com/alex-gillard/CS50_Projects/blob/main/sell.html)
- * [app.py](https://github.com/alex-gillard/CS50_Projects/blob/main/app.py)
+ * [fin_app.py](https://github.com/alex-gillard/CS50_Projects/blob/main/fin_app.py)
  * [finance.db](https://github.com/alex-gillard/CS50_Projects/blob/main/finance.db)
  * [helpers.py](https://github.com/alex-gillard/CS50_Projects/blob/main/helpers.py)
 
