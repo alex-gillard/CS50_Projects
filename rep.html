@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <link href="hp_styles.css" rel="stylesheet">
+        <title>My Webpage</title>
+        <!--Embedding 3Dmol Viewer: Used for viewing and interacting with molecular protein structures-->
+        <!--Source:https://3dmol.csb.pitt.edu/doc/tutorial-embeddable.html-->
+        <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+    </head>
+    <body>
+        <div class="background container-fluid">
+            <!--Start: Navbar Content-->
+            <nav class="navbar navbar-expand-lg bg-light">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Contents</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">General Information</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="moe.html">Mechanism of Entry</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Replication Cycle</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="ref.html">References</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+              <!--End: Navbar Content-->
+            <h1 class="headerText">Molecular Biology of SARS-CoV-2</h1>
+            <br>
+            <h2 class="headerText">Replication Cycle</h2>
+            <br>
+            <p class="infoText text-center">After SARS-CoV-2 releases its RNA genome into the host cell, two pivotol open reading frames from the genomic RNA, ORF1a and ORF1b are translated by utilizing ribsomes of the host cell.
+              Following translation, the large polyproteins pp1a and pp1ab are produced and post-translationally processed and cleaved into individual functional non-structural proteins (nsps).
+              Located at the endoplasmic reticulum (ER), the nsps contribute toward forming a Replication and Transcription Complex (RTC) to form structures such as double-membrane vesicles (DMVs) and convoluted membranes (CMs) using the membrane of the ER to build them.
+              The RTC functions to perform replication and transcription of the SARS-CoV-2 genome. Once sufficient copies of the genomic RNA and viral proteins are synthesized within the RTC, they are transported to the Golgi apparatus to initiate the process of assembling virions<a href="ref.html"><sup>2</sup></a>.
+            </p>
+            <img src="images/COVID_nsp-polyproteins.jpeg" alt="Depiction of the pp1a and pp1ab polyproteins produced from the ORF1a and ORF1b genes composed of functional non-structural protein elements" width="1400" height="300">
+            <figure>
+            <figcaption class="figure-caption fs-6">Figure 1. Protein schematic of the polyproteins, pp1a and pp1ab containing the nsps essential for facilitating SARS-CoV-2 replication. Adapted from V'kovski, Kratzel, and Steiner <em>et. al.</em><a href="ref.html"><sup>2</sup></a></figcaption>
+            </figure>
+            <br>
+            <p class="infoText text-center"> While the virons are assembled within the Golgi apparatus, Furin - a proprotein convertase produced within the human cells (Fig. 2) - actively cleaves an amino acid sequence motif (PRRAR) located within the S1/S2 junction unique to the SARS-CoV-2 spike protein<a href="ref.html"><sup>1,2</sup></a>.
+              Cleavage of this sequence motif, subsequently activates the SARS-CoV-2 spike protein to effectively bind other host cells.
+              Following activation of the spike protein, virion assembly is completed and the virions are transported to the cell surface through the process of exocytosis using subcellular vesicles as a means of transport.
+              Once the viral particles exit the infected host-cell, it is through this step that the newly formed virions are ready to infect other host cells and repeat the replication cycle.
+            </p>
+            <!--Embedding Molecular Viewer: Human Furin Protein-->
+            <div id="container-02" class="mol-container"></div>
+            <div id="spike" style="height: 600px; width: 600px; position: relative;" class='viewer_3Dmoljs' data-pdb='5JXG' data-backgroundcolor='#fdffeb' data-style='cartoon'></div>
+            <figure>
+            <figcaption class="figure-caption fs-6">Figure 2. Ribbon visualization of the human furin protein. PDB: 5JXG </figcaption>
+            </figure>
+          </div>
+    </body>
+</html>
