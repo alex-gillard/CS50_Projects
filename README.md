@@ -437,3 +437,96 @@ The Fiftyville project showcased the power of SQL for data analysis and the impo
 * [fiftyville.db](https://github.com/alex-gillard/CS50_Projects/blob/main/fiftyville.db)
 * [log.sql](https://github.com/alex-gillard/CS50_Projects/blob/main/log.sql)
 * [answers.txt](https://github.com/alex-gillard/CS50_Projects/blob/main/answers.txt)
+
+## Week 8: HTML, CSS, JavaScript
+### Trivia
+
+In the Trivia project, participants were tasked with creating an interactive webpage that allows users to answer trivia questions using HTML, CSS, and JavaScript. The webpage features two types of trivia questions: multiple-choice and text-based free response. Each question is designed with user interaction in mind, providing immediate feedback on the correctness of the user's answer.
+
+For the multiple-choice section, an HTML structure including an h3 heading for the question and buttons for each answer choice was required. JavaScript logic was implemented to change the color of the buttons upon user interaction—turning red for incorrect answers and green for correct ones, with corresponding text feedback displayed below the question.
+
+The text-based free response section similarly used an h3 heading for the question, an input field for user responses, and a confirmation button. JavaScript was used to validate the user's input against the correct answer, altering the input field's color and displaying feedback text accordingly.
+
+Participants had the option to enhance the webpage's aesthetics and user experience by modifying the styles.css file, as well as adding more trivia questions to enrich the quiz content. This project demonstrated a practical application of web development skills, highlighting the dynamic capabilities of JavaScript to create engaging, interactive content on webpages.
+
+#### Associated Files
+* [trivia_index.html](https://github.com/alex-gillard/CS50_Projects/blob/main/trivia_index.html)
+* [trivia_styles.css](https://github.com/alex-gillard/CS50_Projects/blob/main/trivia_styles.css)
+
+### Homepage
+
+The Homepage project involved developing a simple yet interactive homepage using HTML, CSS, and JavaScript. This project aimed to construct a personal or hobby-related website, which introduces the creator or a subject of interest through the foundational languages of web development. The design specifications required the website to contain at least four different .html pages, including index.html as the main page, ensuring navigability between pages through hyperlinks. The project emphasized the use of at least ten distinct HTML tags beyond the basic structural ones to enrich the webpage's content and layout. Incorporating Bootstrap, a popular CSS framework, was mandated to enhance the website's aesthetics and responsiveness. This involved integrating Bootstrap's CSS and JavaScript libraries, utilizing its ready-made components and grid system for a professional and polished appearance.
+
+Moreover, the creation of a custom stylesheet (styles.css) was specified, where at least five different CSS selectors and properties were to be applied, showcasing the ability to creatively and effectively style web elements. Integration of JavaScript was another crucial aspect of the project, aimed at making the webpage more dynamic and interactive. This could include functionality such as alerts, animations, or interactive forms, depending on the JavaScript coding skills and creative ideas implemented. The project placed a strong emphasis on responsive design, ensuring a seamless user experience across various devices, from mobile phones to desktop computers. This tested the ability to use responsive design principles and Bootstrap's responsive features to adapt the layout and content to different screen sizes.
+
+Overall, the Homepage project provided a comprehensive exercise in web development, challenging the use of HTML, CSS, and JavaScript to create a functional, aesthetically pleasing, and interactive website. It highlighted the importance of combining content, style, and functionality in web design, preparing for more advanced web development tasks.
+
+#### Associated Files
+* [images](https://github.com/alex-gillard/CS50_Projects/tree/main/images)
+* [index.html](https://github.com/alex-gillard/CS50_Projects/blob/main/index.html)
+* [moe.html](https://github.com/alex-gillard/CS50_Projects/blob/main/moe.html)
+* [ref.html](https://github.com/alex-gillard/CS50_Projects/blob/main/ref.html)
+* [rep.html](https://github.com/alex-gillard/CS50_Projects/blob/main/rep.html)
+* [hp_styles.css](https://github.com/alex-gillard/CS50_Projects/blob/main/hp_styles.css)
+
+## Week 9: Flask
+### Birthdays
+
+The Birthdays project involved creating a web application for tracking friends' birthdays. This application was built using Flask, a web framework in Python, and utilized a SQLite database to store birthday data. The objective was to develop a platform that allows users to both view a list of birthdays and add new ones through a web interface.
+
+The project's Flask application, outlined in app.py, was set up with a single route (/) that handled both GET and POST requests. For GET requests, the application displayed an index.html page, rendering a table of all people and their birthdays from the birthdays.db database. The implementation required adding logic to the GET request handler in app.py to query the database and pass the birthday data to the index.html template.
+
+The index.html page included a form enabling users to input a new birthday, specifying a name, a month, and a day. This form submitted data to the / route using the POST method. In app.py, the POST request handler was programmed to insert the new birthday data into the birthdays.db database, after which the index page was re-rendered to include the new entry.
+
+Participants had the option to extend the functionality of the web application by adding features to edit or delete birthday entries or any other additional features of their choosing. This project provided a practical experience in developing a full-stack web application, combining backend logic with database interaction and frontend presentation. It showcased the integration of Python with HTML and SQL to create a dynamic, user-interactive web application.
+
+#### Associated Files
+
+* [index.html](https://github.com/alex-gillard/CS50_Projects/blob/main/index.html)
+* [bd_styles.css](https://github.com/alex-gillard/CS50_Projects/blob/main/bd_styles.css)
+* [app.py](https://github.com/alex-gillard/CS50_Projects/blob/main/app.py)
+* [birthdays.db](https://github.com/alex-gillard/CS50_Projects/blob/main/birthdays.db)
+
+### Finance
+
+The Finance project involved creating a web application that simulated stock trading, enabling users to "buy" and "sell" stocks using real-time stock data. The application was developed using Flask, a Python web framework, and integrated with a financial data provider to access real-time stock prices.
+
+The core functionality of the application included:
+
+User Registration: Implementing a registration feature allowing users to create an account. This involved handling user inputs for usernames and passwords, storing user credentials securely in a database, and managing user sessions.
+
+Stock Quotes: Enabling users to look up current stock prices. Users entered stock symbols, and the application used an external API to fetch real-time data.
+
+Buying Stocks: Allowing users to "buy" stocks. This required validating user inputs, ensuring sufficient account balance, and updating the database with the transaction details.
+
+Selling Stocks: Enabling users to "sell" stocks they owned. The application needed to handle stock selection, validate the number of shares, and update the user's portfolio and balance.
+
+Transaction History: Displaying a history of all user transactions, including both buys and sells, with relevant details like stock symbol, price, number of shares, and transaction date.
+
+Portfolio Display: Showing a summary of the user's current holdings, including the stock names, number of shares owned, current market value of each stock, and the total value of the portfolio.
+
+Account Balance: Maintaining and displaying the user's cash balance, updated with each transaction.
+
+The project was designed to give users a realistic experience of stock trading. It required a blend of backend development (handling data, interfacing with the API, server-side logic) and frontend development (creating interactive web pages). Key technologies and concepts used in this project included Flask for the backend, SQLite for database management, HTML/CSS for frontend development, and JavaScript for enhancing user interactivity.
+
+This project provided a comprehensive experience in building a full-fledged web application, covering aspects of database management, user authentication, external API integration, and dynamic content generation based on user interactions.
+
+#### Associated Files
+ * [favicon.ico](https://github.com/alex-gillard/CS50_Projects/blob/main/favicon.ico)
+ * [styles.css](https://github.com/alex-gillard/CS50_Projects/blob/main/styles.css)
+ * [apology.html](https://github.com/alex-gillard/CS50_Projects/blob/main/apology.html)
+ * [buy.html](https://github.com/alex-gillard/CS50_Projects/blob/main/buy.html)
+ * [history.html](https://github.com/alex-gillard/CS50_Projects/blob/main/history.html)
+ * [index.html](https://github.com/alex-gillard/CS50_Projects/blob/main/index.html)
+ * [layout.html](https://github.com/alex-gillard/CS50_Projects/blob/main/layout.html)
+ * [login.html](https://github.com/alex-gillard/CS50_Projects/blob/main/login.html)
+ * [quote.html](https://github.com/alex-gillard/CS50_Projects/blob/main/quote.html)
+ * [quoted.html](https://github.com/alex-gillard/CS50_Projects/blob/main/quoted.html)
+ * [register.html](https://github.com/alex-gillard/CS50_Projects/blob/main/register.html)
+ * [sell.html](https://github.com/alex-gillard/CS50_Projects/blob/main/sell.html)
+ * [app.py](https://github.com/alex-gillard/CS50_Projects/blob/main/app.py)
+ * [finance.db](https://github.com/alex-gillard/CS50_Projects/blob/main/finance.db)
+ * [helpers.py](https://github.com/alex-gillard/CS50_Projects/blob/main/helpers.py)
+
+
+
