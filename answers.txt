@@ -1,6 +1,3 @@
-sort1 uses: Bubble Sort
-How do you know?: Using the random50000 text file, this algorithm took the longest time to compile at 5.475 seconds compared to the sort2 and sort3 algorithms
-sort2 uses: Merge Sort
-How do you know?: Using the random50000 text file, this algorithm took the shortest time to compile at 0.28 seconds compared to the sort1 and sort3 algorithms
-sort3 uses: Selection Sort
-How do you know?: Using the random50000 text file, this algorithm produces an intermediate time between sort1 and sort2 at 2.05 seconds.
+The THIEF is: Bruce
+The city the thief ESCAPED TO: New York City
+The ACCOMPLICE is: Robin
