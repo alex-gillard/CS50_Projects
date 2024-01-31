@@ -229,5 +229,211 @@ Note that this program outputs .wav files
 * [wav.h](https://github.com/alex-gillard/CS50_Projects/blob/main/wav.h)
 * [reverse.c](https://github.com/alex-gillard/CS50_Projects/blob/main/reverse.c)
 
+## Week 5: Data Structures
+### Inheritance
 
+In this CS50 assignment, a program named inheritance.c was developed to simulate the inheritance of blood types across three generations of a family. The simulation models how alleles (A, B, O) are passed from parents to children, determining each person's blood type through a combination of inherited alleles.
 
+The program starts by creating a family tree using dynamic memory allocation for each family member, including the person, their parents, and grandparents. For the oldest generation, alleles are assigned randomly. For subsequent generations, each person inherits one random allele from each parent. This inheritance is achieved through recursive calls to the create_family function, which constructs the family tree by allocating memory for each person, assigning parents and alleles appropriately, and ensuring the oldest generation has no parents (indicated by NULL pointers) and randomly assigned alleles.
+
+After constructing the family tree, the program prints out the blood type of each family member, demonstrating the inherited blood types across generations. Finally, the program frees the allocated memory for each person in the family tree using the free_family function. This function recursively frees memory for all ancestors of a given person, ensuring no memory leaks occur. This assignment emphasizes the concepts of dynamic memory allocation, recursion, and pointers in C programming, illustrating how data structures can be used to model complex relationships and processes.
+
+#### Example Output
+```
+$ ./inheritance
+Child (Generation 0): blood type OO
+    Parent (Generation 1): blood type AO
+        Grandparent (Generation 2): blood type OA
+        Grandparent (Generation 2): blood type BO
+    Parent (Generation 1): blood type OB
+        Grandparent (Generation 2): blood type AO
+        Grandparent (Generation 2): blood type BO
+```
+
+#### Associated Files
+* [inheritance.c](https://github.com/alex-gillard/CS50_Projects/blob/main/inheritance.c)
+
+### Speller
+
+In this CS50 assignment, the challenge was to implement a spell-checking program using a hash table to efficiently manage dictionary operations. The program, speller, reads a dictionary of words from disk into memory and then checks a text file for misspellings, identifying words not found in the dictionary.
+
+The implementation required completing several key functions in dictionary.c: load, to read the dictionary and store it in a hash table; hash, to convert words into numerical indices for the hash table; size, to return the total number of words in the dictionary; check, to determine if a word is spelled correctly according to the dictionary; and unload, to free memory used by the hash table. A suitable hash function had to be devised to minimize collisions and distribute words evenly across the hash table.
+
+Efficiency was paramount, as the program's performance was measured in terms of the time taken to load the dictionary, check words, determine the dictionary's size, and unload the dictionary from memory. The program was designed to be case-insensitive and handle variations in capitalization without compromising the speed or accuracy of the spell check.
+
+This assignment emphasized the importance of data structure choice—in this case, a hash table—for optimizing the performance of real-world applications like spell-checking. It challenged students to consider both time complexity and memory usage, requiring careful planning and optimization to balance the two. The end goal was to create a spell checker that was not only functionally correct but also as fast and memory-efficient as possible.
+
+#### Example Output
+```
+$ ./speller texts/lalaland.txt
+MISSPELLED WORDS
+
+[...]
+AHHHHHHHHHHHHHHHHHHHHHHHHHHHT
+[...]
+Shangri
+[...]
+fianc
+[...]
+Sebastian's
+[...]
+
+WORDS MISSPELLED:
+WORDS IN DICTIONARY:
+WORDS IN TEXT:
+TIME IN load:
+TIME IN check:
+TIME IN size:
+TIME IN unload:
+TIME IN TOTAL:
+```
+
+#### Associated Files
+* [dictionary.c](https://github.com/alex-gillard/CS50_Projects/blob/main/dictionary.c)
+* [dictionary.h](https://github.com/alex-gillard/CS50_Projects/blob/main/dictionary.h)
+* [large.txt](https://github.com/alex-gillard/CS50_Projects/blob/main/large.txt)
+* [small.txt](https://github.com/alex-gillard/CS50_Projects/blob/main/small.txt)
+* [speller.c](https://github.com/alex-gillard/CS50_Projects/blob/main/speller.c)
+* [Makefile.txt](https://github.com/alex-gillard/CS50_Projects/blob/main/Makefile.txt)
+
+## Week 6: Python
+### World Cup
+
+In the CS50 World Cup simulation project, a program was written to simulate FIFA World Cup tournaments and calculate each team's probability of winning based on FIFA ratings. The process involved reading team data from a CSV file, where each team was represented as a dictionary containing its name and rating. The program, tournament.py, utilized command-line arguments to select the appropriate team CSV file for the men's or women's World Cup data.
+
+The core of the simulation involved implementing the simulate_tournament function, which simulated the knockout rounds by repeatedly calling the simulate_round function until a single winning team remained. This tournament simulation was run multiple times (defaulted to 1000 simulations) to aggregate the win counts for each team.
+
+The main function managed the simulation process, reading the team data into memory, executing the tournament simulations, and keeping track of wins in a counts dictionary to calculate each team's winning probability. The results were sorted and printed, showing the estimated chances of each team winning the World Cup, demonstrating a practical application of Python for data processing and simulation in a sports context.
+
+#### Example Output
+```
+$ python tournament.py 2018m.csv
+Belgium: 20.9% chance of winning
+Brazil: 20.3% chance of winning
+Portugal: 14.5% chance of winning
+Spain: 13.6% chance of winning
+Switzerland: 10.5% chance of winning
+Argentina: 6.5% chance of winning
+England: 3.7% chance of winning
+France: 3.3% chance of winning
+Denmark: 2.2% chance of winning
+Croatia: 2.0% chance of winning
+Colombia: 1.8% chance of winning
+Sweden: 0.5% chance of winning
+Uruguay: 0.1% chance of winning
+Mexico: 0.1% chance of winning
+```
+
+#### Associated Files
+* [tournament.py](https://github.com/alex-gillard/CS50_Projects/blob/main/tournament.py)
+* [2018m.csv](https://github.com/alex-gillard/CS50_Projects/blob/main/2018m.csv) 2018 Men's FIFA Ratings
+* [2019w.csv](https://github.com/alex-gillard/CS50_Projects/blob/main/2019w.csv) 2019 Women's FIFA Ratings
+
+### Mario
+
+In the Python version of the CS50 Mario assignment, a program was developed to print a half-pyramid of a specified height, mimicking the structure found in the classic Mario game. The program, mario.py, prompts the user to input a height value between 1 and 8, inclusive. Upon receiving a valid input, it generates the half-pyramid using hash symbols (#) for blocks, aligning the pyramid's bottom-left corner with the left-hand edge of the terminal window.
+
+The implementation required careful use of loops and conditionals to ensure the program re-prompts the user for input upon receiving invalid data, such as negative numbers, numbers greater than 8, non-integer values, or no input at all. The focus was on leveraging Python's control structures to validate user input and dynamically generate the pyramid's structure based on the specified height, demonstrating fundamental programming concepts in Python.
+  
+#### Example Output
+```
+$ python mario.py
+Height: 4
+   #
+  ##
+ ###
+####
+```
+
+#### Associated Files
+* [mario.py](https://github.com/alex-gillard/CS50_Projects/blob/main/mario.py)
+
+### Cash
+
+In the Python version of the CS50 Cash assignment, a program was developed to calculate the minimum number of coins required to make change for a given amount of money. The program, cash.py, prompts the user for an amount of change owed, expressed in dollars, and calculates the smallest number of quarters (25¢), dimes (10¢), nickels (5¢), and pennies (1¢) needed to make that change.
+
+Utilizing the get_float function from the CS50 Library to handle user input, the program ensures the amount entered is non-negative and repeatedly prompts for a valid input if necessary. Upon receiving a valid amount, it efficiently computes the coin count by sequentially subtracting the largest coin values possible and incrementing a coin counter until the remaining change owed is zero.
+
+The implementation showcases fundamental programming concepts in Python, such as loops and conditionals, while also emphasizing precision in handling floating-point arithmetic to deal with money values accurately. The output is the minimum number of coins required, displayed as a single integer followed by a newline, aligning with the specifications for automated correctness testing.
+
+#### Example Output
+```
+$ python cash.py
+Change owed: 0.41
+4
+```
+
+#### Associated Files
+* [cash.py](https://github.com/alex-gillard/CS50_Projects/blob/main/cash.py)
+
+### Readability
+
+In the Python adaptation of the CS50 Readability assignment, a program named readability.py was crafted to compute the grade level necessary to understand a given piece of text, employing the Coleman-Liau index formula. The program prompts the user for a block of text and outputs the corresponding grade level needed for comprehension. This task involves calculating the number of letters, words, and sentences within the input text to determine its complexity.
+
+The program utilizes Python's string manipulation capabilities to accurately count characters that qualify as letters and delimiters that signify the end of sentences, such as periods, exclamation points, or question marks. It carefully calculates the average number of letters per 100 words and the average number of sentences per 100 words, feeding these averages into the Coleman-Liau formula to derive a grade level, which is then rounded to the nearest whole number for output.
+
+Special conditions are handled gracefully: if the computed grade level is 16 or above, indicating a reading level at or above that of a senior in high school, the program outputs "Grade 16+." Conversely, for texts assessed to be below a first-grade reading level, it outputs "Before Grade 1." This project not only demonstrates proficiency in Python programming but also showcases the practical application of computational thinking in evaluating and interpreting textual data.
+
+#### Example Output
+```
+$ python readability.py
+Text: Congratulations! Today is your day. You're off to Great Places! You're off and away!
+Grade 3
+```
+
+#### Associated Files
+* [readability.py](https://github.com/alex-gillard/CS50_Projects/blob/main/readability.py)
+
+### DNA
+
+In the Python-based CS50 DNA project, a program named dna.py was created to identify individuals based on their DNA. The program takes two command-line arguments: a CSV file with STR (Short Tandem Repeat) counts for a list of individuals and a text file containing the DNA sequence to be identified. It reads the STR sequences and their counts from the CSV file into memory and then analyzes the provided DNA sequence to compute the longest run of consecutive repeats for each STR listed in the CSV file's header.
+
+The analysis involves leveraging a helper function, longest_match, which calculates the maximum number of times an STR repeats in the DNA sequence. The program compares these calculated STR counts against those in the CSV file to find a match. If the STR counts align exactly with one of the individuals in the database, the program prints the individual's name. If there is no exact match, it outputs "No match."
+
+This project underscores the application of computational techniques to biological data, requiring proficiency in file I/O operations, string manipulation, and data structure management in Python. It encapsulates how programming can intersect with genetics and forensic science, providing a practical tool for DNA profiling.
+
+#### Example Output
+```
+$ python dna.py databases/large.csv sequences/5.txt
+Lavender
+```
+
+#### Associated Files (Sequence Files excluded for brevity)
+* [dna.py](https://github.com/alex-gillard/CS50_Projects/blob/main/dna.py)
+* [large.csv](https://github.com/alex-gillard/CS50_Projects/blob/main/large.csv)
+* [small.csv](https://github.com/alex-gillard/CS50_Projects/blob/main/small.csv)
+
+## Week 7: SQL
+### Songs
+
+In the Songs project, SQL queries were formulated to extract specific insights from a database containing Spotify's top streamed songs in 2018. The database, songs.db, includes details about songs and artists, such as danceability, energy, tempo, and duration. Participants were tasked with writing SQL queries to perform a range of analyses, from listing all songs in the database to calculating the average energy of tracks by a particular artist like Drake.
+
+Each query required careful consideration of the database schema, which was explored using the .schema command in SQLite. Queries varied in complexity, including sorting songs by tempo, identifying the longest songs, filtering songs with high danceability, energy, and valence, and averaging the energy of all songs or those by specific artists. Additionally, one query focused on songs featuring other artists, indicated by “feat.” in the song title.
+
+This project demonstrated practical applications of SQL for data analysis, requiring a nuanced understanding of SQL syntax and functions to extract meaningful information from a relational database. It highlighted the use of SQL in real-world scenarios, such as generating tailored music recommendations or summarizing streaming trends.
+
+#### Associated Files
+* [1.sql](https://github.com/alex-gillard/CS50_Projects/blob/main/1.sql)
+* [2.sql](https://github.com/alex-gillard/CS50_Projects/blob/main/2.sql)
+* [3.sql](https://github.com/alex-gillard/CS50_Projects/blob/main/3.sql)
+* [4.sql](https://github.com/alex-gillard/CS50_Projects/blob/main/4.sql)
+* [5.sql](https://github.com/alex-gillard/CS50_Projects/blob/main/5.sql)
+* [6.sql](https://github.com/alex-gillard/CS50_Projects/blob/main/6.sql)
+* [7.sql](https://github.com/alex-gillard/CS50_Projects/blob/main/7.sql)
+* [8.sql](https://github.com/alex-gillard/CS50_Projects/blob/main/8.sql)
+* [songs.db](https://github.com/alex-gillard/CS50_Projects/blob/main/songs.db)
+
+### Fiftyville
+
+In the Fiftyville mystery project, participants utilized SQL queries to unravel a fictional crime involving the theft of the CS50 duck in the town of Fiftyville. The premise was that the theft occurred on July 28, 2021, on Humphrey Street, and the thief, along with an accomplice, fled the town shortly after. The challenge was to deduce the thief's identity, the city to which they escaped, and the identity of the accomplice using only the data provided in the fiftyville.db SQLite database.
+
+The database contained various tables with data from around the time of the theft, including crime scene reports, people's personal details, flight records, and more. Participants needed to craft SQL queries to extract and correlate information across these tables strategically. The process involved analyzing crime scene reports to match the date and location of the theft, examining flight records to identify potential suspects leaving town around the time of the crime, and piecing together evidence to pinpoint the thief and their accomplice.
+
+To document their investigative process, participants maintained a log of their SQL queries in log.sql, annotating each query with comments to explain its purpose and the information it sought to uncover. This log served as a record of the analytical steps taken to solve the mystery, highlighting the application of SQL in data-driven problem-solving and investigative scenarios.
+
+The Fiftyville project showcased the power of SQL for data analysis and the importance of logical reasoning in solving complex problems. It provided a practical exercise in applying SQL queries to sift through and make sense of large datasets, embodying the intersection of programming skills and deductive reasoning in forensic analysis.
+
+#### Associated Files
+* [fiftyville.db](https://github.com/alex-gillard/CS50_Projects/blob/main/fiftyville.db)
+* [log.sql](https://github.com/alex-gillard/CS50_Projects/blob/main/log.sql)
+* [answers.txt](https://github.com/alex-gillard/CS50_Projects/blob/main/answers.txt)
