@@ -2,81 +2,48 @@
 
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-        <link href="hp_styles.css" rel="stylesheet">
-        <title>My Webpage</title>
-        <!--Embedding 3Dmol Viewer: Used for viewing and interacting with molecular protein structures-->
-        <!--Source:https://3dmol.csb.pitt.edu/doc/tutorial-embeddable.html-->
-        <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
-        <script src="https://3Dmol.org/build/3Dmol.ui-min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="/static/bd_styles.css" rel="stylesheet">
+        <title>Birthdays</title>
     </head>
     <body>
-        <div class="background container-fluid" style="height: 110vh;">
-            <!--Start: Navbar Content-->
-            <nav class="navbar navbar-expand-lg bg-light">
-                <div class="container-fluid">
-                  <a class="navbar-brand" href="#">Contents</a>
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">General Information</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="moe.html">Mechanism of Entry</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="rep.html">Replication Cycle</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="ref.html">References</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </nav>
-              <!--End: Navbar Content-->
-            <h1 class="headerText">Molecular Biology of SARS-CoV-2</h1>
-            <br>
-            <h2 class="headerText">General Information</h2>
-            <br>
-            <p class="lead text-center" style="color: #ffffff">
-                On December 12th of 2019, patients from the city of Wuhan reported experiencing novel pneunomia-like symptoms which hospitals struggled to ameloriate with standard therapeutics at the time.
-                Upon initial investigation into the source of this illness, it was reported that each case was linked the Huanan Seafood Wholesale Market. Cases of this ilness began to increase exponentially, prompting immediate investigation into elucidating the genome of this virus.
-                On January 10th of 2020 the data was uploaded to a genomic database, GenBank which served as foundation for further scientific study (Source: <a href="https://www.cdc.gov/museum/timeline/covid19.html">CDC</a>).
-            </p>
-            <br>
-            <img src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ij.oHFyWY5w4/v0/-1x-1.jpg" alt="Huanan Seafood Wholesale Market located in Wuhan" width="800" height="500" style="display: block; margin: auto;" >
-            <figure>
-            <figcaption class="figure-caption fs-6">Huanan Seafood Wholesale Market from the Wuhan, Hubei Province (Source: <a href="https://www.bloomberg.com/news/articles/2020-01-20/china-s-food-markets-can-be-breeding-grounds-for-deadly-viruses#xj4y7vzkg">Bloomberg</a>)</figcaption>
-            </figure>
-            <br>
-            <p class="lead text-center" style="color: #ffffff">
-                SARS-CoV-2 was identified as causative agent of the COVID-19 pandemic, ushering scientists to engage in remarkable structural studies of the virus using advanced techniques such as Cryogenic Electron Microscopy (Cryo-EM) to investigate how exactly SARS-CoV-2 infects living cells.
-                This page aims to introduce its readers to the structural biology of COVID-19, explaining how the SARS-CoV-2 enters host cells to initiate its replication cycle. The following topics of dicussion will be:
-            </p>
-            <br>
-            <ol id="topics" class="h1" style="color: #ffffff">
-              <li>Mechanism of Entry</li>
-              <li>Replication Cycle</li>
-            </ol>
-            <br>
+        <div class="header">
+            <h1>Birthdays</h1>
         </div>
+        <div class="container">
+            <div class="section">
 
-        <script>
-          let highlight = document.querySelector("#topics");
-          highlight.addEventListener('mouseover', function(){
-            highlight.style.color = "yellow";
-          });
+                <h2>Add a Birthday</h2>
+                <!-- TODO: Create a form for users to submit a name, a month, and a day -->
+                <form action="/" method="POST">
+                    <input type="text" name="name" placeholder="Name">
+                    <input type="text" name="month" placeholder="Month">
+                    <input type="text" name="day" placeholder="Day">
+                    <input type="submit" value="Add Birthday">
+                </form>
+            </div>
 
-          highlight.addEventListener('mouseout', function(){
-            highlight.style.color = "white";
-          });
-        </script>
+            <div class="section">
+
+                <h2>All Birthdays</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Birthday (MM/DD)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- TODO: Loop through the database entries to display them in this table -->
+                        {% for entry in entries %}
+                            <tr>
+                                <td>{{entry.name}}</td>
+                                <td>{{entry.month}}/{{entry.day}}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </body>
 </html>
