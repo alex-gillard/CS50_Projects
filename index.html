@@ -1,49 +1,36 @@
-<!DOCTYPE html>
+{% extends "layout.html" %}
 
-<html lang="en">
-    <head>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-        <link href="/static/bd_styles.css" rel="stylesheet">
-        <title>Birthdays</title>
-    </head>
-    <body>
-        <div class="header">
-            <h1>Birthdays</h1>
-        </div>
-        <div class="container">
-            <div class="section">
+{% block title %}
+    Index
+{% endblock %}
 
-                <h2>Add a Birthday</h2>
-                <!-- TODO: Create a form for users to submit a name, a month, and a day -->
-                <form action="/" method="POST">
-                    <input type="text" name="name" placeholder="Name">
-                    <input type="text" name="month" placeholder="Month">
-                    <input type="text" name="day" placeholder="Day">
-                    <input type="submit" value="Add Birthday">
-                </form>
-            </div>
+{% block main %}
 
-            <div class="section">
+<table class="table table-striped">
+    <thead>
+            <th scope="col">User</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Number of Shares</th>
+            <th scope="col">Stock Price ($)</th>
+            <th scope="col">Total Holding Value ($)</th>
+            <th scope="col">Cash Balance ($)</th>
+            <th scope="col">Grand Total ($)</th>
+    </thead>
+    <tbody>
+        {% for purch in purch_data %}
+        {% for user in user_data %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ purch.stock }}</td>
+                <td>{{ purch.num_shares }}</td>
+                <td>{{ (purch.price / purch.num_shares) | usd}}</td>
+                <td>{{ purch.price | usd }}</td>
+                <td>{{ user.cash | usd }}</td>
+                <td>{{ (purch.price + user.cash) | usd }}</td>
+            </tr>
+        {% endfor %}
+        {% endfor %}
+    <tbody>
+</table>
 
-                <h2>All Birthdays</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Birthday (MM/DD)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- TODO: Loop through the database entries to display them in this table -->
-                        {% for entry in entries %}
-                            <tr>
-                                <td>{{entry.name}}</td>
-                                <td>{{entry.month}}/{{entry.day}}</td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </body>
-</html>
+{% endblock %}

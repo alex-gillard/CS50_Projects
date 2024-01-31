@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Symbol</th>
+            <th scope="col">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ stock_quote["symbol"] }}</td>
+            <td>{{ stock_quote["price"] | usd }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}
