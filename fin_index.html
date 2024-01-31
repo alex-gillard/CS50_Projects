@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+<table class="table table-striped">
+    <thead>
+            <th scope="col">User</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Number of Shares</th>
+            <th scope="col">Stock Price ($)</th>
+            <th scope="col">Total Holding Value ($)</th>
+            <th scope="col">Cash Balance ($)</th>
+            <th scope="col">Grand Total ($)</th>
+    </thead>
+    <tbody>
+        {% for purch in purch_data %}
+        {% for user in user_data %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ purch.stock }}</td>
+                <td>{{ purch.num_shares }}</td>
+                <td>{{ (purch.price / purch.num_shares) | usd}}</td>
+                <td>{{ purch.price | usd }}</td>
+                <td>{{ user.cash | usd }}</td>
+                <td>{{ (purch.price + user.cash) | usd }}</td>
+            </tr>
+        {% endfor %}
+        {% endfor %}
+    <tbody>
+</table>
+
+{% endblock %}
